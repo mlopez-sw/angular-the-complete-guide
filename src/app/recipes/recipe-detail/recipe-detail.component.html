@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-12">
+    <img
+      src="{{ showedRecipe?.imagePath }}"
+      alt=""
+      class="img-responsive"
+      width="50%"
+    />
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <h1>Recipe Name: {{ showedRecipe?.name }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <ul>
+      <li><a (click)="onAddToShoppingList()">To shopping list</a></li>
+      <li><a (click)="onEditRecipe()">Edit recipe</a></li>
+      <li><a (click)="onDeleteRecipe()">Delete recipe</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">Description: {{ showedRecipe?.description }}</div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let ingredient of showedRecipe.ingredients"
+      >
+        {{ ingredient?.name }} - {{ ingredient?.amount }}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+nav {
+  margin-bottom: 5em;
+}
+#nav-navigation {
+  margin-left: 4em;
+}
+#nav-login {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  > li {
+    margin-right: 1em;
+  }
+}
+.active {
+  color: rgb(0, 0, 112);
+}
+a {
+  cursor: pointer;
+  &:hover {
+    color: rgb(0, 0, 112);
+  }
+}
