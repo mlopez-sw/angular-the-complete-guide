@@ -42,8 +42,13 @@
       </div>
     </form>
     <br /><br />
-    <div *ngIf="error" class="alert-danger alert">
+    <app-alert
+      [message]="error"
+      *ngIf="error"
+      (close)="onHandleError()"
+    ></app-alert>
+    <!-- <div *ngIf="error" class="alert-danger alert">
       <p>{{ error }}</p>
-    </div>
+    </div> -->
   </div>
 </div>
