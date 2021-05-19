@@ -1,0 +1,19 @@
+.container {
+  text-align: center;
+  margin-top: 45vh;
+}
+
+button {
+  margin-left: 1em;
+  padding: 1em 2em;
+  font-size: 1.25em;
+  cursor: pointer;
+  border-radius: 1em;
+  opacity: 75%;
+  &:first-child {
+    background: lightblue;
+  }
+  &:last-child {
+    background: lightcoral;
+  }
+}
