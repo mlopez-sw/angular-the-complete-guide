@@ -1,0 +1,11 @@
+<button class="btn btn-primary" (click)="onShowPassword()">
+  {{ !showPassword ? "Display details" : "Hide details" }}
+</button>
+<p *ngIf="showPassword">Secret password = 'Caput draconis'</p>
+<div
+  *ngFor="let lg of log; let i = index"
+  [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : 'transparent' }"
+  [ngClass]="{ 'white-text': i >= 4 }"
+>
+  <p>{{ lg }}</p>
+</div>
