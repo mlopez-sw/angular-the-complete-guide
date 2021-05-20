@@ -1,0 +1,43 @@
+.container {
+  margin: 25vh auto 0;
+  // max-width: 50%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  h1 {
+    margin-bottom: 1em;
+    text-shadow: 0.5px 0.5px 1px gray;
+    text-transform: uppercase;
+    font-size: 2em;
+  }
+}
+
+form > * {
+  margin-bottom: 1em;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+input.ng-valid {
+  border: 1px solid rgb(0, 172, 37);
+}
+
+#template,
+#reactive {
+  max-width: 50vw;
+  box-shadow: 1px 1px 14px 2px #c1cdd752;
+  padding: 3em 5em 5em;
+  border-radius: 1em;
+}
+
+#form-message {
+  background: yellow;
+  padding: 1em 2em;
+  border: 1px solid gray;
+  text-align: center;
+  border-radius: 1em;
+}
