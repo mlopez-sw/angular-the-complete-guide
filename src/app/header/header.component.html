@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default bg-light">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand">Recipe Book</a>
+      <a class="navbar-brand" routerLink="/recipes">Recipe Book</a>
     </div>
     <div class="navbar-default navbar-left">
       <ul class="nav" id="nav-navigation">
@@ -10,18 +10,18 @@
             >Recipes</a
           >
         </li>
-        <li class="nav-item" *ngIf="!isAuthenticated">
+        <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="/shopping"
             >Shopping List</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isAuthenticated">
           <a class="nav-link" routerLinkActive="active" routerLink="/auth"
             >Authenticate</a
           >
         </li>
       </ul>
-      <div class="dropdown">
+      <div class="dropdown" *ngIf="isAuthenticated">
         <button
           class="btn btn-primary dropdown-toggle"
           type="button"

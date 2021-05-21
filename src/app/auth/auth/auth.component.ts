@@ -7,7 +7,13 @@ import { AuthResponseData, AuthService } from './auth.service';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  styles: [''],
+  styles: [
+    `
+      input {
+        max-width: 500px;
+      }
+    `,
+  ],
 })
 export class AuthComponent implements OnInit {
   isLoginMode = true;
