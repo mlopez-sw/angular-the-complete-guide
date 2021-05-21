@@ -9,8 +9,13 @@ import { AuthResponseData, AuthService } from './auth.service';
   templateUrl: './auth.component.html',
   styles: [
     `
-      input {
-        max-width: 500px;
+      .col-12.col-md-6 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      form {
+        width: 500px;
       }
     `,
   ],
