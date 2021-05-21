@@ -5,12 +5,18 @@ nav {
   margin-left: 4em;
 }
 #nav-login {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
+  // list-style: none;
+  // display: flex;
+  // flex-direction: row;
+  right: 0;
+  left: auto;
   > li {
     margin-right: 1em;
   }
+}
+.dropdown {
+  text-align: right;
+  margin-right: 1em;
 }
 .active {
   color: rgb(0, 0, 112);

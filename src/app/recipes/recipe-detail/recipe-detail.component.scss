@@ -8,3 +8,12 @@ li {
     color: blue;
   }
 }
+
+.img-responsive {
+  max-height: 280px;
+  margin: 0 auto;
+  width: auto;
+}
+.img-container {
+  display: flex;
+}
