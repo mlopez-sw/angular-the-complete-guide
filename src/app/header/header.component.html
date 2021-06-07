@@ -16,7 +16,13 @@
           >
         </li>
         <li class="nav-item" *ngIf="!isAuthenticated">
-          <a class="nav-link" routerLinkActive="active" routerLink="/auth"
+          <a
+            appHighlight
+            defaultColor="transparent"
+            highLightColor="lightcyan"
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="/auth"
             >Authenticate</a
           >
         </li>
