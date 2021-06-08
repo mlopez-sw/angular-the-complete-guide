@@ -1,8 +1,11 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Recipe } from './recipe.model';
+import * as ShoppingListActions from '../shopping-list/store/shopping-list.actions';
+import * as fromShoppingList from '../shopping-list/store/shopping-list.reducer';
 
 @Injectable({ providedIn: 'root' })
 export class RecipeService {
@@ -11,28 +14,10 @@ export class RecipeService {
   recipeChanged = new Subject<Recipe[]>();
   private recipes: Recipe[] = [];
 
-  constructor(private shoppingListService: ShoppingListService) {
-    // this.recipes = new Array(
-    //   new Recipe(
-    //     'Nombre 1',
-    //     'Descripcion 1',
-    //     'https://source.unsplash.com/featured/?cooking,recipe',
-    //     [new Ingredient('meat', 2), new Ingredient('fries', 5)]
-    //   ),
-    //   new Recipe(
-    //     'Nombre 2',
-    //     'Descripcion 2',
-    //     'https://source.unsplash.com/featured/?cooking',
-    //     [new Ingredient('meat', 5), new Ingredient('potatoes', 1)]
-    //   ),
-    //   new Recipe(
-    //     'Nombre 3',
-    //     'Descripcion 3',
-    //     'https://source.unsplash.com/featured/?recipe',
-    //     [new Ingredient('milk', 2), new Ingredient('eggs', 6)]
-    //   )
-    // );
-  }
+  constructor(
+    private shoppingListService: ShoppingListService,
+    private store: Store<fromShoppingList.AppState>
+  ) {}
 
   getRecipes() {
     return this.recipes.slice();
@@ -46,7 +31,8 @@ export class RecipeService {
   }
 
   addIngridientsToShoppingList(ingredients: Ingredient[]) {
-    this.shoppingListService.addIngredients(ingredients);
+    // this.shoppingListService.addIngredients(ingredients);
+    this.store.dispatch(new ShoppingListActions.AddIngredients(ingredients));
   }
 
   addRecipe(recipe: Recipe) {
