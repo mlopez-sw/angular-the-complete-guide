@@ -16,7 +16,7 @@ export class RecipeService {
 
   constructor(
     private shoppingListService: ShoppingListService,
-    private store: Store<fromShoppingList.AppState>
+    private store: Store<fromShoppingList.State>
   ) {}
 
   getRecipes() {
