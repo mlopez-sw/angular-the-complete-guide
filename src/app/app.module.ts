@@ -16,7 +16,7 @@ import { AuthEffects } from './auth/store/auth.effects';
 @NgModule({
   declarations: [AppComponent, HeaderComponent, HighlightDirective],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     // RecipesModule, lazy loaded in app-routing!
