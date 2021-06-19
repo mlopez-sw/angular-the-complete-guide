@@ -1,0 +1,33 @@
+nav {
+  margin-bottom: 5em;
+}
+#nav-navigation {
+  margin-left: 4em;
+}
+#nav-login {
+  // list-style: none;
+  // display: flex;
+  // flex-direction: row;
+  right: 0;
+  left: auto;
+  > li {
+    margin-right: 1em;
+  }
+}
+.dropdown {
+  text-align: right;
+  margin-right: 1em;
+}
+.active {
+  color: rgb(0, 0, 112);
+}
+a {
+  cursor: pointer;
+  &:hover {
+    color: rgb(0, 0, 112);
+  }
+}
+
+.navbar-default.navbar-left {
+  display: flex;
+}

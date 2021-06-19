@@ -1,0 +1,19 @@
+ul {
+  list-style: none;
+}
+
+li {
+  cursor: pointer;
+  &:hover {
+    color: blue;
+  }
+}
+
+.img-responsive {
+  max-height: 280px;
+  margin: 0 auto;
+  width: auto;
+}
+.img-container {
+  display: flex;
+}

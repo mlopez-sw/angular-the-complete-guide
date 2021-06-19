@@ -1,0 +1,57 @@
+<nav class="navbar navbar-default bg-light">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/recipes">Recipe Book</a>
+    </div>
+    <div class="navbar-default navbar-left">
+      <ul class="nav" id="nav-navigation">
+        <li class="nav-item" *ngIf="isAuthenticated">
+          <a class="nav-link" routerLinkActive="active" routerLink="/recipes"
+            >Recipes</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/shopping"
+            >Shopping List</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="!isAuthenticated">
+          <a
+            appHighlight
+            defaultColor="transparent"
+            highLightColor="lightcyan"
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="/auth"
+            >Authenticate</a
+          >
+        </li>
+      </ul>
+      <div class="dropdown" *ngIf="isAuthenticated">
+        <button
+          class="btn btn-primary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
+        <ul
+          class="dropdown-menu"
+          aria-labelledby="dropdownMenuButton1"
+          id="nav-login"
+          *ngIf="isAuthenticated"
+        >
+          <li><a class="dropdown-item" (click)="onSaveData()">Save data</a></li>
+          <li>
+            <a class="dropdown-item" (click)="onFetchData()">Fetch data</a>
+          </li>
+          <li>
+            <a class="dropdown-item" (click)="onLogout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
